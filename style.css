@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+/* ▼ 全体の基本設定 */
+body {
+  margin: 0;
+}
+
+/* ▼ 上部入力フォーム全体 */
+div.form {
+  background: rgb(219, 240, 248);
+  width: 100%;
+  padding: 16px;
+}
+
+/* ▼ ラベル文字 */
+p {
+  font-size: 16px;
+  margin: 0;
+}
+
+/* ▼ 入力欄 */
+input {
+  width: 6em;
+  font-size: 12px;
+  margin: 0;
+}
+
+/* ▼ 単位（円・年）を入力欄の近くに配置 */
+.input-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.input-wrap span {
+  font-size: 12px;
+}
+
+/* ▼ 見出し */
+h2 {
+  margin: 0;
+  font-size: 20px;
+  width: 100%;
+}

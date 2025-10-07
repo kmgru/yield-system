@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>年金利回り試算</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="form">
+    <p>月額保険料</p>
+    <div class="input-wrap">
+      <input class="A" value="16,540"><span>円</span>
+    </div>
+    <p>払込期間</p>
+    <div class="input-wrap">
+      <input type="number" class="T" value="40"><span>年</span>
+    </div>
+    <p>年間年金額</p>
+    <div class="input-wrap">
+      <input class="Y" value="781,700"><span>円</span>
+    </div>
+    <p>据置期間</p>
+    <div class="input-wrap">
+      <input type="number" class="D" value="5"><span>年</span>
+    </div>
+  </div>
+
+  <h2>各年齢での利回り</h2>
+  <div id="result"></div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
