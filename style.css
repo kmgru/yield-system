@@ -43,19 +43,11 @@ h2 {
   width: 100%;
 }
 h3{
-  margin: 0;
+  margin: 0 1em;
   font-size: 16px;
 }
 
-#result table {
-  border-collapse: collapse; /* 枠線まとめる */
-  width: 100%;
-}
-#result td, #result th {
-  padding: 0.5em 0; /* 上下に余白を追加 */
-  text-align: left;
-}
 #result p {
-  margin: 0.5em 0; /* 上下に余白を作る */
+  margin: 0.5em 1em;
   font-size: 14px;
 }
