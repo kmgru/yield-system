@@ -41,31 +41,34 @@ function calcDisplay() {
   const D = Number(document.querySelector('input.D').value); // 据置年数
 
   const resultDiv = document.getElementById('result');
-  resultDiv.innerHTML = '<table><tr><th>　年齢</th><th>年利</th></tr>';
 
+  const h3 = document.createElement('h3');
+  h3.textContent = `年齢　年利`;
+  resultDiv.appendChild(h3);
+
+
+  let firstRed = false;
   for (let age = 65; age <= 100; age++) {
     const receiveYears = age - 64;
     const cashflows = [];
 
     // 払込期（年単位キャッシュフロー）
     for (let i = 0; i < T; i++) cashflows.push(-A * 12);
-
     // 据置期間（0円）
     for (let i = 0; i < D; i++) cashflows.push(0);
-
     // 受給期
     for (let i = 0; i < receiveYears; i++) cashflows.push(Y);
 
     const irr = calcIRR(cashflows) * 100;
-    if (age <= 99) {
-      resultDiv.innerHTML += `<tr><td>　${age}歳 : </td><td>${irr.toFixed(2)}%</td></tr><br>`;
-    } else {
-      resultDiv.innerHTML += `<tr><td>&nbsp${age}歳</td> : <td>${irr.toFixed(2)}%</td></tr><br>`;
+    const p = document.createElement('p');
+    p.textContent = `${age}歳 : ${irr.toFixed(2)}%`;
+    if (!firstRed && irr > 0) {
+      p.style.color = 'red';
+      firstRed = true;
     }
 
+    resultDiv.appendChild(p);
   }
-
-  resultDiv.innerHTML += "</table>";
 }
 
 document.querySelectorAll('input.A, input.Y').forEach(input => {
