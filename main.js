@@ -41,6 +41,7 @@ function calcDisplay() {
   const D = Number(document.querySelector('input.D').value); // 据置年数
 
   const resultDiv = document.getElementById('result');
+  resultDiv.innerHTML = '';
 
   const h3 = document.createElement('h3');
   h3.textContent = `年齢　年利`;
@@ -72,7 +73,8 @@ function calcDisplay() {
 }
 
 document.querySelectorAll('input.A, input.Y').forEach(input => {
-  input.addEventListener('input', e => {
+  input.addEventListener('input', calcDisplay);
+  input.addEventListener('blur', e => {
     const num = parseNumber(e.target.value);
     e.target.value = formatNumber(num);
     calcDisplay();
